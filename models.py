@@ -166,7 +166,7 @@ class GCN(Model):
                                             placeholders=self.placeholders,
                                             act=tf.nn.relu,
                                             dropout=True,
-                                            featureless=True,
+                                            featureless=False,
                                             sparse_inputs=True,
                                             logging=self.logging))
 
