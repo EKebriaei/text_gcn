@@ -11,6 +11,8 @@ from nltk.corpus import wordnet as wn
 from sklearn.feature_extraction.text import TfidfVectorizer
 import sys
 from scipy.spatial.distance import cosine
+import fasttext
+import fasttext.util
 
 if len(sys.argv) != 2:
 	sys.exit("Use: python build_graph.py <dataset>")
@@ -27,7 +29,7 @@ if dataset not in datasets:
 # word_vector_file = 'data/corpus/' + dataset + '_word_vectors.txt'
 #_, embd, word_vector_map = loadWord2Vec(word_vector_file)
 # word_embeddings_dim = len(embd[0])
-
+word_vector_map = fasttext.load_model('/content/cc.en.300.bin')
 word_embeddings_dim = 300
 word_vector_map = {}
 
